@@ -1,0 +1,48 @@
+seed: 1234
+
+signal:
+  sample_rate_hz: 20.0e+6
+  num_samples: 512
+  classes: ["wifi", "ble", "zigbee"]
+  wifi:   { nfft: 64, cp_len: 16, active_carriers: 52 }
+  ble:    { symbol_rate_hz: 1.0e+6, deviation_hz: 250.0e+3 }
+  zigbee: { chip_rate_hz: 2.0e+6 }
+  snr_db_range: [8.0, 30.0]
+  cfo_frac_range: [-0.02, 0.02]
+  gain_db_range: [-3.0, 3.0]
+
+spectrogram:
+  nperseg: 32
+  hop: 16
+  n_freq: 32
+  n_time: 32
+  ref_db: 45.0
+
+data:
+  n_train: 600
+  n_val: 150
+  n_test: 300
+  n_anom_per_type: 75
+  anomaly_types: ["heavy_noise", "freq_shift", "timing_corrupt", "protocol_mix"]
+  out_dir: "data_quick"
+
+models:
+  vae:       { latent_dim: 32, base_ch: 32, beta: 1.0 }
+  flow:      { n_coupling: 6, hidden: 128 }
+  diffusion: { timesteps: 200, base_ch: 32, beta_start: 1.0e-4, beta_end: 0.02 }
+  mamba: { d_model: 64, n_layers: 2, d_state: 8, levels: 256 }
+  classifier: { base_ch: 32 }
+
+train:
+  batch_size: 128
+  epochs_vae: 4
+  epochs_flow: 4
+  epochs_diffusion: 4
+  epochs_classifier: 4
+  epochs_mamba: 2
+  batch_size_mamba: 64
+  lr: 2.0e-4
+  weight_decay: 0.0
+  runs_dir: "runs_quick"
+
+results_dir: "results_quick"

@@ -1,0 +1,58 @@
+{
+  "anomaly_types": [
+    "heavy_noise",
+    "freq_shift",
+    "timing_corrupt",
+    "protocol_mix"
+  ],
+  "per_model": {
+    "diffusion": {
+      "anom_score_mean": 0.16292016517122587,
+      "ap": 0.9774913261723315,
+      "auc": 0.971868,
+      "normal_score_mean": 0.10325662033011516,
+      "per_type_auc": {
+        "freq_shift": 1.0,
+        "heavy_noise": 0.9360426666666667,
+        "protocol_mix": 0.9558275555555555,
+        "timing_corrupt": 0.9956017777777778
+      }
+    },
+    "flow": {
+      "anom_score_mean": 9904.288723714193,
+      "ap": 0.9850520893036719,
+      "auc": 0.9831204444444446,
+      "normal_score_mean": -1054.8624608561197,
+      "per_type_auc": {
+        "freq_shift": 1.0,
+        "heavy_noise": 0.9507502222222223,
+        "protocol_mix": 0.9842097777777779,
+        "timing_corrupt": 0.9975217777777777
+      }
+    },
+    "mamba": {
+      "anom_score_mean": 5123.199968261719,
+      "ap": 0.84227632434142,
+      "auc": 0.8292488888888888,
+      "normal_score_mean": 3832.4595765787763,
+      "per_type_auc": {
+        "freq_shift": 0.9865404444444444,
+        "heavy_noise": 0.9118613333333334,
+        "protocol_mix": 0.6876,
+        "timing_corrupt": 0.7309937777777777
+      }
+    },
+    "vae": {
+      "anom_score_mean": 646.0156910807292,
+      "ap": 0.8687100854529454,
+      "auc": 0.8457777777777777,
+      "normal_score_mean": 516.5909187316895,
+      "per_type_auc": {
+        "freq_shift": 0.9446577777777777,
+        "heavy_noise": 0.8691786666666667,
+        "protocol_mix": 0.8187519999999999,
+        "timing_corrupt": 0.7505226666666667
+      }
+    }
+  }
+}

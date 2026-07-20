@@ -1,0 +1,63 @@
+{
+  "class_names": [
+    "wifi",
+    "ble",
+    "zigbee"
+  ],
+  "likelihood": {
+    "diffusion": {
+      "test_denoise_mse": 0.10305622965097427
+    },
+    "flow": {
+      "test_bpd": -1.4861764907836914,
+      "test_nll_nats": -1054.8624267578125
+    },
+    "mamba": {
+      "test_bpd": 5.399482802073161
+    },
+    "vae": {
+      "test_bpd_bound": 0.7277719378471375,
+      "test_kl_nats": 2.4840211868286133,
+      "test_recon_mse": 0.012731625698506832,
+      "test_recon_nats": 514.075927734375
+    }
+  },
+  "per_model": {
+    "diffusion": {
+      "frechet": 0.1566082302520111,
+      "gen_accuracy": 1.0,
+      "per_class_accuracy": {
+        "ble": 1.0,
+        "wifi": 1.0,
+        "zigbee": 1.0
+      }
+    },
+    "flow": {
+      "frechet": 0.2353378786845836,
+      "gen_accuracy": 1.0,
+      "per_class_accuracy": {
+        "ble": 1.0,
+        "wifi": 1.0,
+        "zigbee": 1.0
+      }
+    },
+    "mamba": {
+      "frechet": 2.530298322788743,
+      "gen_accuracy": 1.0,
+      "per_class_accuracy": {
+        "ble": 1.0,
+        "wifi": 1.0,
+        "zigbee": 1.0
+      }
+    },
+    "vae": {
+      "frechet": 0.17518687363520702,
+      "gen_accuracy": 1.0,
+      "per_class_accuracy": {
+        "ble": 1.0,
+        "wifi": 1.0,
+        "zigbee": 1.0
+      }
+    }
+  }
+}
